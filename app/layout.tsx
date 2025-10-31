@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Sidebar from "@/components/layouts/Sidebar";
+import MobileFooter from "@/components/layouts/MobileFooter";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -75,7 +76,9 @@ export default function RootLayout({
             "
           >
             {children}
+            <MobileFooter/>
           </main>
+          
         </div>
       </body>
     </html>
