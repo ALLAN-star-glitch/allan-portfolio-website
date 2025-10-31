@@ -28,12 +28,30 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white text-gray-800`}
       >
-        <div className="flex min-h-screen">
-          {/* Sidebar */}
-          <Sidebar />
+        {/* ✅ Sidebar handles both mobile and desktop */}
+        <Sidebar />
 
-          {/* Main Content */}
-          <main className="flex-1 overflow-y-auto ml-0 md:ml-72 transition-all duration-300 p-6">
+        {/* ✅ Main container */}
+        <div className="flex flex-col md:flex-row min-h-screen w-full">
+          {/* Desktop Sidebar Spacer (only visible on large screens) */}
+          <div className="hidden lg:block w-72 shrink-0" />
+
+          {/* ✅ Main Content — flush & responsive */}
+          <main
+            className="
+              flex-1 
+              w-full 
+              min-h-screen 
+              overflow-y-auto 
+              bg-white
+              transition-all 
+              duration-300 
+              ease-in-out
+              pt-5
+              lg:pt-0
+      
+            "
+          >
             {children}
           </main>
         </div>

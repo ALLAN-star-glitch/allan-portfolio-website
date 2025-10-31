@@ -6,7 +6,7 @@ import FeaturedProjectsSection from "@/components/home/FeaturedProjectsSection";
 
 export default function HomePage() {
   return (
-    <div className="max-w-6xl mx-auto">
+    <div className="w-full">
       <HeroSection />
       <main className="space-y-20 mt-12">
         <AboutSection />

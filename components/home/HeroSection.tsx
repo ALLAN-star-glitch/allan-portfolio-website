@@ -2,85 +2,109 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import FadeInWhenVisible from "../animations/FadeInWhenVisible";
+import SlideInWhenVisible from "../animations/SlideInWhenVisible";
+import ZoomInWhenVisible from "../animations/ZoomInWhenVisible";
 
 export default function HeroSection() {
   return (
-    <section className="pt-10 sm:pt-14 lg:pt-20 px-4 sm:px-6 lg:px-12">
-      <div className="flex flex-col-reverse lg:grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-        {/* Text Section */}
-        <div className="text-center lg:text-left space-y-8">
-          <motion.h1
-            initial={{ opacity: 0, y: 8 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-bold leading-tight text-[#0f1724]"
-          >
-            Hi, I’m <span className="text-[#2979FF]">Allan Mathenge</span> — I build
-            sophisticated digital products that merge{" "}
-            <span className="text-[#2979FF]">technology</span> and{" "}
-            <span className="text-[#2979FF]">design</span>.
-          </motion.h1>
+    <section className="w-full bg-linear-to-r from-[#fafcfd] via-[#f3f7fc] to-[#e3f1ff] overflow-hidden">
+      {/* Container */}
+      <div className="pt-10 pb-10 lg:pt-20 px-6 sm:px-10 lg:px-20">
+        <div className="flex flex-col-reverse lg:grid lg:grid-cols-2 gap-10 lg:gap-16 items-center w-full">
+          {/* TEXT SECTION */}
+          <div className="text-center lg:text-left space-y-8">
+            {/* Heading */}
+            <SlideInWhenVisible from="up" delay={0.1}>
+              <h1 className="text-3xl sm:text-4xl md:text-3xl lg:text-4xl font-bold leading-tight text-[#0f1724]">
+                Hi, I’m <span className="text-[#2979FF]">Allan Mathenge</span> — I
+                build sophisticated digital products that merge{" "}
+                <span className="text-[#2979FF]">technology</span> and{" "}
+                <span className="text-[#2979FF]">design</span>.
+              </h1>
+            </SlideInWhenVisible>
 
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.15 }}
-            className="text-base sm:text-lg text-gray-600 leading-relaxed max-w-xl mx-auto lg:mx-0"
-          >
-            With expertise across backend, frontend, mobile, and blockchain development — and a
-            passion for elegant design — I craft digital experiences that are scalable, beautiful,
-            and human-centered.
-          </motion.p>
+            {/* Subtext */}
+            <FadeInWhenVisible delay={0.2}>
+              <p className="text-base sm:text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                With expertise across backend, frontend, mobile, and blockchain
+                development — and a passion for elegant design — I craft digital
+                experiences that are scalable, beautiful, and human-centered.
+              </p>
+            </FadeInWhenVisible>
 
-          {/* Buttons */}
-          <div className="flex flex-wrap justify-center lg:justify-start gap-4">
-            <Link href="/projects">
-              <motion.button
-                whileHover={{ scale: 1.03, y: -2 }}
-                transition={{ type: "spring", stiffness: 300 }}
-                className="px-6 py-3 bg-[#2979FF] text-white rounded-xl font-medium shadow-lg hover:shadow-xl transition-all"
-              >
-                View My Work
-              </motion.button>
-            </Link>
+            {/* Buttons */}
+            <FadeInWhenVisible delay={0.3}>
+              <div className="flex flex-wrap justify-center lg:justify-start gap-4">
+                <Link href="/projects">
+                  <button className="px-6 py-3 bg-[#2979FF] text-white rounded-xl font-medium shadow-lg hover:shadow-xl transition-all hover:-translate-y-1">
+                    View My Work
+                  </button>
+                </Link>
 
-            <a href="mailto:allan@domain.com" rel="noopener noreferrer">
-              <motion.button
-                whileHover={{ scale: 1.03, y: -2 }}
-                transition={{ type: "spring", stiffness: 300 }}
-                className="px-6 py-3 bg-white text-gray-800 rounded-xl font-medium shadow-md hover:shadow-lg border border-gray-200 transition-all"
-              >
-                Let’s Collaborate
-              </motion.button>
-            </a>
+                <a href="mailto:allan@domain.com" rel="noopener noreferrer">
+                  <button className="px-6 py-3 bg-white text-gray-800 rounded-xl font-medium shadow-md hover:shadow-lg border border-gray-200 transition-all hover:-translate-y-1">
+                    Let’s Collaborate
+                  </button>
+                </a>
+              </div>
+            </FadeInWhenVisible>
+
+            {/* Skills */}
+            <FadeInWhenVisible delay={0.4}>
+              <div className="pt-4 text-xs sm:text-sm text-gray-500">
+                <strong className="text-gray-700">Specialties:</strong>{" "}
+                Node.js · NestJS · React · Next.js · Android · Blockchain ·
+                PostgreSQL · Figma
+              </div>
+            </FadeInWhenVisible>
           </div>
 
-          {/* Specialties */}
-          <div className="pt-4 text-xs sm:text-sm text-gray-500">
-            <strong className="text-gray-700">Specialties:</strong>{" "}
-            Node.js · NestJS · React · Next.js · Android · Blockchain · PostgreSQL · Figma
-          </div>
+          {/* IMAGE SECTION */}
+          <ZoomInWhenVisible delay={0.15}>
+            <div className="flex justify-center lg:justify-end">
+              {/* Mobile image */}
+              <div
+                className="
+                  relative 
+                  w-32 h-32 sm:w-40 sm:h-40 
+                  lg:hidden 
+                  rounded-full overflow-hidden
+                  border-4 border-blue-100 shadow-lg
+                "
+              >
+                <Image
+                  src="/allanprofile.jpg"
+                  alt="Allan Mathenge"
+                  width={160}
+                  height={160}
+                  className="object-cover"
+                  priority
+                />
+              </div>
+
+              {/* Desktop image */}
+              <div
+                className="
+                  hidden lg:block
+                  relative 
+                  w-96 h-96 
+                  rounded-3xl overflow-hidden 
+                  shadow-2xl
+                "
+              >
+                <Image
+                  src="/allan2profile.png"
+                  alt="Allan Mathenge"
+                  width={400}
+                  height={400}
+                  className="object-cover"
+                  priority
+                />
+              </div>
+            </div>
+          </ZoomInWhenVisible>
         </div>
-
-        {/* Profile Image */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.97 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.7, ease: "easeOut" }}
-          className="flex justify-center lg:justify-end"
-        >
-          <div className="relative w-60 h-60 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-3xl overflow-hidden shadow-2xl">
-            <Image
-              src="/allan2profile.png"
-              alt="Allan Mathenge"
-              width={400}
-              height={400}
-              className="object-cover"
-              priority
-            />
-          </div>
-        </motion.div>
       </div>
     </section>
   );

@@ -1,29 +1,34 @@
 'use client'
 
-// components/home/CallToAction.tsx
-import Link from "next/link";
-import { motion } from "framer-motion";
+
+import SecondaryButton from "../common/SecondaryButton";
+import PrimaryButton from "../common/PrimaryButton";
+import FadeInWhenVisible from "../animations/FadeInWhenVisible";
 
 export default function CallToAction() {
   return (
-    <section className="bg-white border rounded-lg p-6 shadow-sm">
-      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-        <div>
-          <h3 className="text-xl font-semibold">Interested in working together?</h3>
-          <p className="text-gray-600 mt-1">I’m available for freelance and full-time opportunities.</p>
-        </div>
+    <section className="bg-linear-to-b from-white to-gray-50 py-8">
+      <div className="px-6 sm:px-10 lg:px-20">
+        <FadeInWhenVisible>
+          <div className="rounded-2xl bg-white shadow-lg p-8 sm:p-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-8 border border-gray-100">
+            {/* Text Content */}
+            <div className="max-w-xl">
+              <h3 className="text-2xl sm:text-3xl font-semibold text-gray-900">
+                Let’s build something amazing together
+              </h3>
+              <p className="text-gray-600 mt-3 text-base sm:text-lg leading-relaxed">
+                I’m open to collaborations, freelance projects, and full-time opportunities.
+                Let’s bring your ideas to life.
+              </p>
+            </div>
 
-        <div className="flex gap-3">
-          <Link href="/contact">
-            <motion.button whileHover={{ scale: 1.03 }} className="px-4 py-2 bg-[#2979FF] text-white rounded-md">
-              Contact Me
-            </motion.button>
-          </Link>
-
-          <a href="/resume" className="px-4 py-2 border rounded-md text-gray-700">
-            View Resume
-          </a>
-        </div>
+            {/* Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+              <PrimaryButton href="/contact" label="Contact Me" />
+              <SecondaryButton href="/resume" label="View Resume" />
+            </div>
+          </div>
+        </FadeInWhenVisible>
       </div>
     </section>
   );
