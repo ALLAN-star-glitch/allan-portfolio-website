@@ -16,6 +16,29 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Allan Mathenge — Software Engineer & Designer",
   description: "Crafting elegant, scalable digital experiences.",
+  openGraph: {
+    title: "Allan Mathenge — Software Engineer & Designer",
+    description: "Crafting elegant, scalable digital experiences.",
+    url: "https://allan-portfolio-website.vercel.app", 
+    siteName: "Allan Mathenge",
+    images: [
+      {
+        url: "https://allan-portfolio-website.vercel.app/_next/image?url=%2Fallanprofile.jpg&w=256&q=75", 
+        width: 1200,
+        height: 630,
+        alt: "Allan Mathenge — Software Engineer & Designer",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  // twitter: {
+  //   card: "summary_large_image",
+  //   title: "Allan Mathenge — Software Engineer & Designer",
+  //   description: "Crafting elegant, scalable digital experiences.",
+  //   images: ["https://www.yourdomain.com/og-image.png"], // Replace with your OG image
+  //   creator: "@YourTwitterHandle", // Optional
+  // },
 };
 
 export default function RootLayout({
@@ -49,7 +72,6 @@ export default function RootLayout({
               ease-in-out
               pt-5
               lg:pt-0
-      
             "
           >
             {children}

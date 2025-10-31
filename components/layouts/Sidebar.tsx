@@ -70,12 +70,22 @@ export default function Sidebar() {
         </div>
       </aside>
 
-      {/* ===== Mobile Navbar ===== */}
+      {/* ===== Mobile & Medium Navbar ===== */}
       <header className="lg:hidden fixed top-0 left-0 w-full bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-sm z-50 flex items-center justify-between px-5 py-3">
-        <h1 className="text-lg font-semibold text-gray-900 tracking-tight">
-          Allan Mathenge
-        </h1>
+        {/* Left: Initials */}
+        <Link
+          href="/"
+          className="text-xl font-bold text-[#2979FF] tracking-tight"
+        >
+          AM
+        </Link>
 
+        {/* Center: Full Name */}
+        <div className="absolute left-1/2 transform -translate-x-1/2 text-gray-900 font-semibold text-lg tracking-tight">
+          Allan Mathenge
+        </div>
+
+        {/* Right: Toggle Button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
           className="text-gray-700 hover:text-blue-600 transition-colors duration-200 focus:outline-none"
