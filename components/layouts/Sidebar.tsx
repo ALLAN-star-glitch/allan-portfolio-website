@@ -72,12 +72,18 @@ export default function Sidebar() {
 
       {/* ===== Mobile & Medium Navbar ===== */}
       <header className="lg:hidden fixed top-0 left-0 w-full bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-sm z-50 flex items-center justify-between px-5 py-3">
-        {/* Left: Initials */}
-        <Link
-          href="/"
-          className="text-xl font-bold text-[#2979FF] tracking-tight"
-        >
-          AM
+        {/* Left: Logo */}
+        <Link href="/">
+          <div className="relative w-10 h-10">
+            <Image
+              src="/logo.png" // <-- replace with your logo path
+              alt="Logo"
+              width={40}
+              height={40}
+              className="object-contain"
+              priority
+            />
+          </div>
         </Link>
 
         {/* Center: Full Name */}

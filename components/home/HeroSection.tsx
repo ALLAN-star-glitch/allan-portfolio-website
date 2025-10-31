@@ -10,7 +10,7 @@ export default function HeroSection() {
   return (
     <section className="w-full bg-linear-to-r from-[#fafcfd] via-[#f3f7fc] to-[#e3f1ff] overflow-hidden">
       {/* Container */}
-      <div className="pt-10 pb-10 lg:pt-20 px-6 sm:px-10 lg:px-20">
+      <div className="pt-15 pb-10 lg:pt-20 px-6 sm:px-10 lg:px-20">
         <div className="flex flex-col-reverse lg:grid lg:grid-cols-2 gap-10 lg:gap-16 items-center w-full">
           {/* TEXT SECTION */}
           <div className="text-center lg:text-left space-y-8">
