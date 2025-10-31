@@ -12,8 +12,11 @@ export default function FeaturedProjectCard({ project }: FeaturedProjectCardProp
 
   // Handle Strapi image path
   const imageUrl = image?.url
-    ? `${process.env.NEXT_PUBLIC_STRAPI_URL}${image.url}`
-    : "/placeholder.png";
+  ? image.url.startsWith("http")
+    ? image.url
+    : `${process.env.NEXT_PUBLIC_STRAPI_URL}${image.url}`
+  : "/placeholder.png";
+
 
   return (
     <motion.article
