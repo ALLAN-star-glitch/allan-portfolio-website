@@ -7,7 +7,7 @@ export type Project = {
   tags: string[] | null;
   githubUrl?: string;
   liveUrl?: string;
-  image?: {
+  img: {
     id: number;
     url: string;
     formats?: {

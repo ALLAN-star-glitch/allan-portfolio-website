@@ -8,13 +8,13 @@ interface FeaturedProjectCardProps {
 }
 
 export default function FeaturedProjectCard({ project }: FeaturedProjectCardProps) {
-  const { title, description, liveUrl, githubUrl, image, tags } = project;
+  const { title, description, liveUrl, githubUrl, img, tags } = project;
 
   // Handle Strapi image path - make sure image exists
-  const imageUrl = image?.url
-  ? image.url.startsWith("http")
-    ? image.url
-    : `${process.env.NEXT_PUBLIC_STRAPI_URL}${image.url}`
+  const imageUrl = img?.url
+  ? img.url.startsWith("http")
+    ? img.url
+    : `${process.env.NEXT_PUBLIC_STRAPI_URL}${img.url}`
   : "/lowtag.jpg";
 
 

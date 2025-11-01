@@ -23,6 +23,6 @@ export async function fetchFromStrapi(endpoint: string, options: RequestInit = {
  * Fetch Featured Projects
  */
 export async function getFeaturedProjects() {
-  const data = await fetchFromStrapi("featured-projects?populate=*");
+  const data = await fetchFromStrapi("featured-projs?populate=*");
   return data.data; // Strapi returns { data, meta }
 }
