@@ -15,7 +15,7 @@ export default function FeaturedProjectCard({ project }: FeaturedProjectCardProp
   ? image.url.startsWith("http")
     ? image.url
     : `${process.env.NEXT_PUBLIC_STRAPI_URL}${image.url}`
-  : "/placeholder.png";
+  : "/lowtag.jpg";
 
 
   return (
