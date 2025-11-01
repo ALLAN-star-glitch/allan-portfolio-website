@@ -10,7 +10,7 @@ interface FeaturedProjectCardProps {
 export default function FeaturedProjectCard({ project }: FeaturedProjectCardProps) {
   const { title, description, liveUrl, githubUrl, image, tags } = project;
 
-  // Handle Strapi image path
+  // Handle Strapi image path - make sure image exists
   const imageUrl = image?.url
   ? image.url.startsWith("http")
     ? image.url
