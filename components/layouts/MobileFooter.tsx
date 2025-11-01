@@ -18,11 +18,11 @@ export default function MobileFooter() {
         <div className="flex flex-col items-center gap-2 text-sm text-gray-600 mt-2">
           <div className="flex items-center gap-2">
             <Phone className="w-4 h-4 text-blue-500" />
-            <span>+254 712 345 678</span>
+            <span>+254740955111</span>
           </div>
           <div className="flex items-center gap-2">
             <Mail className="w-4 h-4 text-blue-500" />
-            <span>allanmathenge@gmail.com</span>
+            <span>allanmathenge67@gmail.com</span>
           </div>
           <div className="flex items-center gap-2">
             <MapPin className="w-4 h-4 text-blue-500" />

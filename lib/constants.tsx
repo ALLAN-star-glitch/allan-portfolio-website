@@ -22,12 +22,12 @@ export const navLinks = [
 export const socialLinks = [
   {
     name: "GitHub",
-    href: "https://github.com/allanmathenge",
+    href: "https://github.com/ALLAN-star-glitch",
     icon: <FaGithub size={20} />,
   },
   {
     name: "LinkedIn",
-    href: "https://linkedin.com/in/allanmathenge",
+    href: "https://www.linkedin.com/in/allan-mathenge-534a36239/",
     icon: <FaLinkedin size={20} />,
   },
   {
@@ -42,7 +42,7 @@ export const socialLinks = [
   },
   {
     name: "Twitter",
-    href: "https://twitter.com/allanmathenge",
+    href: "https://x.com/mathenge_a23811",
     icon: <FaTwitter size={20} />,
   },
 ];

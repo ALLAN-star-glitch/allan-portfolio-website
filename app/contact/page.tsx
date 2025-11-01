@@ -16,14 +16,14 @@ export default function ContactPage() {
     {
       icon: <AiOutlineMail className="w-6 h-6 text-blue-700" />,
       title: "Email",
-      detail: "allan@example.com",
-      link: "mailto:allan@example.com",
+      detail: "allanmathenge67@gmail.com",
+      link: "mailto:allanmathenge67@gmail.com",
     },
     {
       icon: <AiOutlinePhone className="w-6 h-6 text-blue-700" />,
       title: "Phone",
-      detail: "+254 700 000 000",
-      link: "tel:+254700000000",
+      detail: "+254740955111",
+      link: "tel:+254740955111",
     },
     {
       icon: <GoLocation className="w-6 h-6 text-blue-700" />,
@@ -34,14 +34,14 @@ export default function ContactPage() {
     {
       icon: <AiOutlineLinkedin className="w-6 h-6 text-blue-700" />,
       title: "LinkedIn",
-      detail: "linkedin.com/in/allanmathenge",
-      link: "https://linkedin.com/in/allanmathenge",
+      detail: "linkedin.com/in/allan-mathenge-534a36239",
+      link: "https://www.linkedin.com/in/allan-mathenge-534a36239/",
     },
     {
       icon: <AiOutlineGithub className="w-6 h-6 text-blue-700" />,
       title: "GitHub",
-      detail: "github.com/allanmathenge",
-      link: "https://github.com/allanmathenge",
+      detail: "github.com/allan-star-glitch",
+      link: "https://github.com/ALLAN-star-glitch",
     },
   ];
 
