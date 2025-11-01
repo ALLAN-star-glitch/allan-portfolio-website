@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { navLinks, socialLinks } from "@/lib/constants";
 import SidebarItem from "./SidebarItem";
+import { MapPin, Mail, Phone } from "lucide-react"; // elegant icons
 
 export default function Sidebar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -61,12 +62,30 @@ export default function Sidebar() {
           </nav>
         </div>
 
-        {/* Footer */}
-        <div className="text-center text-xs text-gray-500 mb-6">
-          <p className="font-semibold text-gray-700 mb-1">
-            © {new Date().getFullYear()}
-          </p>
-          <p className="text-gray-400 tracking-wide">Allan Mathenge</p>
+        {/* Contact Info */}
+        <div className="px-6 mb-6 space-y-2 text-sm text-gray-600">
+          <div className="flex items-center gap-2">
+            <Phone className="w-4 h-4 text-blue-500" />
+            <span>+254 712 345 678</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <Mail className="w-4 h-4 text-blue-500" />
+            <span>allanmathenge@gmail.com</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <MapPin className="w-4 h-4 text-blue-500" />
+            <span>Nairobi, Kenya</span>
+          </div>
+
+          {/* Footer */}
+          {/* Footer */}
+          <div className="flex items-center justify-center gap-2 text-xs text-gray-500 mt-5 border-t border-gray-200 pt-4">
+            <span className="font-semibold text-gray-700">
+              © {new Date().getFullYear()}
+            </span>
+            <span className="text-gray-400 tracking-wide">Allan Mathenge</span>
+          </div>
+
         </div>
       </aside>
 
@@ -76,7 +95,7 @@ export default function Sidebar() {
         <Link href="/">
           <div className="relative w-10 h-10">
             <Image
-              src="/logo.png" // <-- replace with your logo path
+              src="/logo.png"
               alt="Logo"
               width={40}
               height={40}
@@ -178,17 +197,34 @@ export default function Sidebar() {
                 key={link.name}
                 name={link.name}
                 href={link.href}
+                icon={link.icon}
                 onClick={() => setIsOpen(false)}
               />
             ))}
           </nav>
 
-          {/* Footer */}
-          <div className="text-center text-xs text-gray-500 mt-10">
-            <p className="font-semibold text-gray-700 mb-1">
-              © {new Date().getFullYear()}
-            </p>
-            <p className="text-gray-400 tracking-wide">Allan Mathenge</p>
+          {/* Contact Info + Footer */}
+          <div className="mt-10 text-sm text-gray-600 space-y-2">
+            <div className="flex items-center gap-2">
+              <Phone className="w-4 h-4 text-blue-500" />
+              <span>+254 712 345 678</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Mail className="w-4 h-4 text-blue-500" />
+              <span>allanmathenge@gmail.com</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <MapPin className="w-4 h-4 text-blue-500" />
+              <span>Nairobi, Kenya</span>
+            </div>
+
+            <div className="flex items-center justify-center gap-2 text-xs text-gray-500 mt-5 border-t border-gray-200 pt-4">
+              <span className="font-semibold text-gray-700">
+                © {new Date().getFullYear()}
+              </span>
+              <span className="text-gray-400 tracking-wide">Allan Mathenge</span>
+            </div>
+
           </div>
         </div>
       </aside>

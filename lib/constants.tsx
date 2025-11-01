@@ -4,14 +4,19 @@ import {
   FaFacebook,
   FaBehance,
   FaTwitter,
+  FaHome,
+  FaProjectDiagram,
+  FaTools,
+  FaFileAlt,
+  FaEnvelope,
 } from "react-icons/fa";
 
 export const navLinks = [
-  { name: "Home", href: "/" },
-  { name: "Projects", href: "/projects" },
-  { name: "Skills", href: "/skills" },
-  { name: "Resume", href: "/resume" },
-  { name: "Contact", href: "/contact" },
+  { name: "Home", href: "/", icon: <FaHome size={18} /> },
+  { name: "Projects", href: "/projects", icon: <FaProjectDiagram size={18} /> },
+  { name: "Skills", href: "/skills", icon: <FaTools size={18} /> },
+  { name: "Resume", href: "/resume", icon: <FaFileAlt size={18} /> },
+  { name: "Contact", href: "/contact", icon: <FaEnvelope size={18} /> },
 ];
 
 export const socialLinks = [
@@ -23,7 +28,7 @@ export const socialLinks = [
   {
     name: "LinkedIn",
     href: "https://linkedin.com/in/allanmathenge",
-    icon: <FaLinkedin size={20} />, 
+    icon: <FaLinkedin size={20} />,
   },
   {
     name: "Facebook",

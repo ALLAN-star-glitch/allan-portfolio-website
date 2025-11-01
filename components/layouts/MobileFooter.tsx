@@ -1,5 +1,8 @@
+"use client";
+
 import Link from "next/link";
 import { navLinks, socialLinks } from "@/lib/constants";
+import { Phone, Mail, MapPin } from "lucide-react";
 
 export default function MobileFooter() {
   return (
@@ -11,8 +14,24 @@ export default function MobileFooter() {
           <p className="text-sm text-gray-500">Software Engineer & Designer</p>
         </div>
 
+        {/* Contact Info */}
+        <div className="flex flex-col items-center gap-2 text-sm text-gray-600 mt-2">
+          <div className="flex items-center gap-2">
+            <Phone className="w-4 h-4 text-blue-500" />
+            <span>+254 712 345 678</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <Mail className="w-4 h-4 text-blue-500" />
+            <span>allanmathenge@gmail.com</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <MapPin className="w-4 h-4 text-blue-500" />
+            <span>Nairobi, Kenya</span>
+          </div>
+        </div>
+
         {/* Navigation Links */}
-        <div className="flex flex-wrap justify-center gap-4 mt-2">
+        <div className="flex flex-wrap justify-center gap-4 mt-3">
           {navLinks.map((link) => (
             <Link
               key={link.name}
@@ -25,7 +44,7 @@ export default function MobileFooter() {
         </div>
 
         {/* Social Links */}
-        <div className="flex gap-4 mt-2">
+        <div className="flex gap-4 mt-3">
           {socialLinks.map((social) => (
             <Link
               key={social.name}
@@ -40,9 +59,11 @@ export default function MobileFooter() {
         </div>
 
         {/* Copyright */}
-        <p className="text-gray-400 text-xs mt-4 text-center">
-          &copy; {new Date().getFullYear()} Allan Mathenge. All rights reserved.
-        </p>
+        <div className="flex items-center justify-center gap-2 text-gray-400 text-xs mt-4">
+          <span>© {new Date().getFullYear()}</span>
+          <span className="text-gray-400">•</span>
+          <span>Allan Mathenge</span>
+        </div>
       </div>
     </footer>
   );
