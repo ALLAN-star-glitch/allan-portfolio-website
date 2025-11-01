@@ -36,7 +36,12 @@ export default function FeaturedProjectCard({ project }: FeaturedProjectCardProp
 
       <div className="p-6">
         <h3 className="text-xl font-semibold text-gray-900">{title}</h3>
-        <p className="text-gray-600 mt-2 line-clamp-3">{description}</p>
+        <p className="text-gray-600 mt-2 line-clamp-3">
+          {Array.isArray(description)
+            ? description[0]?.children?.[0]?.text || ""
+            : description}
+        </p>
+
 
         {tags && tags.length > 0 && (
           <div className="mt-4 flex flex-wrap gap-2">
