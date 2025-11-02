@@ -26,3 +26,13 @@ export async function getFeaturedProjects() {
   const data = await fetchFromStrapi("featured-projs?populate=*");
   return data.data; // Strapi returns { data, meta }
 }
+
+/**
+ * Fetch Projects with Pagination
+ */
+export async function getProjects(page: number = 1, pageSize: number = 6) {
+  const data = await fetchFromStrapi(
+    `projects?pagination[page]=${page}&pagination[pageSize]=${pageSize}&populate=*`
+  );
+  return data; // Strapi returns { data, meta }
+}

@@ -7,6 +7,8 @@ export type Project = {
   tags: string[] | null;
   githubUrl?: string;
   liveUrl?: string;
+  videoUrl?: string;
+  modalDescription?: string;
   popularity?: "Trending" | "Popular" | "Featured" | "New" | "Classic";
   img: {
     id: number;
