@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { navLinks, socialLinks } from "@/lib/constants";
 import SidebarItem from "./SidebarItem";
-import { MapPin, Mail, Phone } from "lucide-react"; // elegant icons
+import { MapPin, Mail, Phone } from "lucide-react";
 
 export default function Sidebar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -56,9 +56,14 @@ export default function Sidebar() {
           </div>
 
           {/* Navigation Links */}
-          <nav className="flex flex-col mt-10 space-y-1 px-6">
+          <nav className="flex flex-col mt-8 space-y-0.5 px-5">
             {navLinks.map((link) => (
-              <SidebarItem key={link.name} name={link.name} href={link.href} />
+              <SidebarItem
+                key={link.name}
+                name={link.name}
+                href={link.href}
+                icon={link.icon}
+              />
             ))}
           </nav>
         </div>
@@ -67,11 +72,11 @@ export default function Sidebar() {
         <div className="px-6 mb-6 space-y-2 text-sm text-gray-600">
           <div className="flex items-center gap-2">
             <Phone className="w-4 h-4 text-blue-500" />
-            <span>+254740955111</span>
+            <span>+254 740 955111</span>
           </div>
           <div className="flex items-center gap-2">
             <Mail className="w-4 h-4 text-blue-500" />
-            <span>allanmatheng67@gmail.com</span>
+            <span>allanmathenge67@gmail.com</span>
           </div>
           <div className="flex items-center gap-2">
             <MapPin className="w-4 h-4 text-blue-500" />
@@ -79,14 +84,12 @@ export default function Sidebar() {
           </div>
 
           {/* Footer */}
-          {/* Footer */}
           <div className="flex items-center justify-center gap-2 text-xs text-gray-500 mt-5 border-t border-gray-200 pt-4">
             <span className="font-semibold text-gray-700">
               © {new Date().getFullYear()}
             </span>
             <span className="text-gray-400 tracking-wide">Allan Mathenge</span>
           </div>
-
         </div>
       </aside>
 
@@ -152,7 +155,7 @@ export default function Sidebar() {
 
       {/* ===== Mobile Drawer ===== */}
       <aside
-        className={`fixed top-0 left-0 h-full w-72 bg-linear-to-b from-white to-blue-50 border-r border-gray-200 shadow-2xl z-50 transform transition-transform duration-300 ease-in-out ${
+        className={`fixed top-0 left-0 h-full w-72 bg-linear-to-b from-white to-blue-50 border-r border-gray-200 shadow-2xl z-50 transform transition-transform duration-300 ease-in-out overflow-y-auto scrollbar-thin scrollbar-thumb-blue-200 scrollbar-track-transparent ${
           isOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
@@ -208,7 +211,7 @@ export default function Sidebar() {
           <div className="mt-10 text-sm text-gray-600 space-y-2">
             <div className="flex items-center gap-2">
               <Phone className="w-4 h-4 text-blue-500" />
-              <span>+254740955111</span>
+              <span>+254 740 955111</span>
             </div>
             <div className="flex items-center gap-2">
               <Mail className="w-4 h-4 text-blue-500" />
@@ -225,7 +228,6 @@ export default function Sidebar() {
               </span>
               <span className="text-gray-400 tracking-wide">Allan Mathenge</span>
             </div>
-
           </div>
         </div>
       </aside>

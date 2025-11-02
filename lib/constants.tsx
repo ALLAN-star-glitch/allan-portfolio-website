@@ -7,15 +7,23 @@ import {
   FaHome,
   FaProjectDiagram,
   FaTools,
-  FaFileAlt,
   FaEnvelope,
+  FaPenNib,
+  FaUser,
+  FaAward,
+  FaBriefcase,
+  FaCloudDownloadAlt, // ✅ added for Digital Resources
 } from "react-icons/fa";
 
 export const navLinks = [
   { name: "Home", href: "/", icon: <FaHome size={18} /> },
+  { name: "About", href: "/about", icon: <FaUser size={18} /> },
   { name: "Projects", href: "/projects", icon: <FaProjectDiagram size={18} /> },
   { name: "Skills", href: "/skills", icon: <FaTools size={18} /> },
-  { name: "Resume", href: "/resume", icon: <FaFileAlt size={18} /> },
+  { name: "Services", href: "/services", icon: <FaBriefcase size={18} /> },
+  { name: "Blog", href: "/blog", icon: <FaPenNib size={18} /> },
+  { name: "Resources", href: "/resources", icon: <FaCloudDownloadAlt size={18} /> }, // ✅ new menu item
+  { name: "Achievements", href: "/achievements", icon: <FaAward size={18} /> },
   { name: "Contact", href: "/contact", icon: <FaEnvelope size={18} /> },
 ];
 
