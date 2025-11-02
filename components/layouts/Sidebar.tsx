@@ -13,7 +13,8 @@ export default function Sidebar() {
   return (
     <>
       {/* ===== Desktop Sidebar ===== */}
-      <aside className="hidden lg:flex fixed left-0 top-0 h-screen w-72 bg-linear-to-b from-white to-blue-50 border-r border-gray-200 flex-col justify-between shadow-md z-40">
+      <aside className="hidden lg:flex fixed left-0 top-0 h-screen w-72 bg-linear-to-b from-white to-blue-50 border-r border-gray-200 flex-col justify-between shadow-md z-40 overflow-y-auto scrollbar-thin scrollbar-thumb-blue-200 scrollbar-track-transparent">
+
         {/* Top Section */}
         <div>
           {/* Profile Section */}

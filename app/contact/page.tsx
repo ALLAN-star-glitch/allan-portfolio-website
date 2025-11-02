@@ -50,14 +50,14 @@ export default function ContactPage() {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
-      className="relative min-h-screen bg-gradient-to-b from-blue-50 via-white to-blue-100 py-24 px-6 md:px-12 lg:px-24 overflow-hidden"
+      className="relative min-h-screen bg-linear-to-b from-blue-50 via-white to-blue-100 py-24 px-6 md:px-12 lg:px-24 overflow-hidden"
     >
       {/* Subtle background glow */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,rgba(147,197,253,0.15),transparent_70%)]" />
 
       {/* Heading */}
       <div className="relative text-center mb-20 z-10">
-        <h1 className="text-6xl md:text-7xl font-extrabold bg-gradient-to-r from-blue-700 via-blue-500 to-cyan-400 bg-clip-text text-transparent mb-4">
+        <h1 className="text-6xl md:text-7xl font-extrabold bg-linear-to-r from-blue-700 via-blue-500 to-cyan-400 bg-clip-text text-transparent mb-4">
           Let’s Connect
         </h1>
         <p className="text-gray-600 text-lg max-w-2xl mx-auto leading-relaxed">
@@ -74,7 +74,7 @@ export default function ContactPage() {
           transition={{ duration: 0.8 }}
           className="flex flex-col space-y-10 relative"
         >
-          <div className="absolute left-5 top-0 bottom-0 w-[2px] bg-gradient-to-b from-blue-300 to-transparent hidden md:block" />
+          <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-linear-to-b from-blue-300 to-transparent hidden md:block" />
 
           {contactDetails.map((item, idx) => (
             <Link
@@ -155,19 +155,12 @@ export default function ContactPage() {
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
               type="submit"
-              className="flex items-center justify-center gap-3 w-full bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-semibold px-8 py-4 rounded-xl shadow-lg hover:shadow-2xl transition"
+              className="flex items-center justify-center gap-3 w-full bg-linear-to-r from-blue-600 to-cyan-500 text-white font-semibold px-8 py-4 rounded-xl shadow-lg hover:shadow-2xl transition"
             >
               <AiOutlineSend className="w-5 h-5" /> Send Message
             </motion.button>
           </form>
         </motion.div>
-      </div>
-
-      {/* Footer */}
-      <div className="relative text-center mt-24 text-gray-700 z-10">
-        <p className="text-lg font-medium">
-          Let’s build something exceptional together ✨
-        </p>
       </div>
     </motion.section>
   );

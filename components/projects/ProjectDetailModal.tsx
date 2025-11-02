@@ -38,7 +38,7 @@ export default function ProjectDetailModal({ project, onClose }: ProjectDetailMo
         onClick={onClose}
       >
         <motion.div
-          className="relative bg-white rounded-2xl shadow-2xl max-w-3xl w-[90%] max-h-[90vh] flex flex-col"
+          className="relative bg-white rounded-3xl shadow-2xl w-full max-w-4xl max-h-[90vh] flex flex-col overflow-hidden"
           initial={{ scale: 0.9, opacity: 0, y: 30 }}
           animate={{ scale: 1, opacity: 1, y: 0 }}
           exit={{ scale: 0.9, opacity: 0, y: 30 }}
@@ -56,7 +56,7 @@ export default function ProjectDetailModal({ project, onClose }: ProjectDetailMo
             {/* Close button */}
             <button
               onClick={onClose}
-              className="absolute top-4 right-4 text-gray-700 hover:text-gray-900 bg-white shadow-md rounded-full p-2 cursor-pointer transition z-10"
+              className="absolute top-4 right-4 text-gray-700 hover:text-gray-900 bg-white shadow-md rounded-2xl p-2 cursor-pointer transition z-10"
             >
               ✕
             </button>
