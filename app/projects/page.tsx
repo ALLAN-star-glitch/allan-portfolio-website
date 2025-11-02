@@ -1,8 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import { Project } from "@/lib/types";
-import { getProjects } from "@/lib/api"; // Updated API helper for pagination
+import { getProjects } from "@/lib/api";
 import ProjectDetailModal from "@/components/projects/ProjectDetailModal";
 import { motionConfig } from "@/components/animations/motionConfig";
 import SlideInWhenVisible from "@/components/animations/SlideInWhenVisible";
@@ -14,12 +15,10 @@ export default function ProjectsPage() {
   const [loading, setLoading] = useState(true);
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
-  // Pagination state
   const [page, setPage] = useState(1);
-  const [pageSize] = useState(6); // Items per page
+  const [pageSize] = useState(6);
   const [totalPages, setTotalPages] = useState(1);
 
-  // Fetch projects with pagination
   useEffect(() => {
     async function fetchProjects() {
       setLoading(true);
@@ -42,7 +41,7 @@ export default function ProjectsPage() {
       {/* Elegant Header */}
       <SlideInWhenVisible from="up" delay={0.1}>
         <div className="text-center max-w-3xl mx-auto">
-          <h1 className="text-4xl sm:text-5xl font-bold text-[#0f1724] tracking-tight">
+          <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 tracking-tight">
             <span className="text-[#165dfc]">My</span> Projects
           </h1>
 
@@ -52,20 +51,20 @@ export default function ProjectsPage() {
           <p className="mt-4 text-gray-600 text-lg sm:text-xl">
             Explore my portfolio of projects, showcasing skills in software development, design, and quality assurance.
           </p>
+
+          {/* Call-to-action button */}
+          <Link
+            href="/contact"
+            className="mt-6 inline-block px-8 py-3 bg-[#165dfc] text-white font-semibold rounded-2xl shadow-lg hover:bg-blue-600 transition-all duration-300 ease-in-out"
+          >
+            Let&apos;s Connect
+          </Link>
         </div>
       </SlideInWhenVisible>
-
-      {/* Loading indicator */}
-      {loading && (
-        <p className="text-sm text-gray-500 text-center mt-6 animate-pulse">
-          Loading projects…
-        </p>
-      )}
 
       {/* Project Grid */}
       <div className="mt-12">
         {loading ? (
-          // Skeleton loaders
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {[...Array(3)].map((_, i) => (
               <div
@@ -97,9 +96,7 @@ export default function ProjectsPage() {
           </div>
         ) : (
           <ZoomInWhenVisible duration={0.8}>
-            <p className="text-gray-500 text-center mt-6">
-              No projects found.
-            </p>
+            <p className="text-gray-500 text-center mt-6">No projects found.</p>
           </ZoomInWhenVisible>
         )}
       </div>
@@ -114,21 +111,19 @@ export default function ProjectsPage() {
           >
             Prev
           </button>
-
           {Array.from({ length: totalPages }, (_, i) => (
             <button
               key={i + 1}
               onClick={() => setPage(i + 1)}
               className={`px-3 py-1 rounded ${
                 page === i + 1
-                  ? "bg-[#165dfc] text-white"
+                  ? "bg-[#165dfc] text-white shadow-md"
                   : "bg-gray-100 hover:bg-gray-200"
               }`}
             >
               {i + 1}
             </button>
           ))}
-
           <button
             onClick={() => setPage((p) => Math.min(p + 1, totalPages))}
             disabled={page === totalPages}
@@ -138,6 +133,22 @@ export default function ProjectsPage() {
           </button>
         </div>
       )}
+
+      {/* Banner CTA */}
+      <div className="mt-16 bg-[#165dfc] rounded-2xl p-12 text-center text-white shadow-xl">
+        <h2 className="text-2xl sm:text-3xl font-bold mb-4">
+          Interested in collaborating or hiring me?
+        </h2>
+        <p className="mb-6 text-lg sm:text-xl">
+          Let&apos;s build something amazing together!
+        </p>
+        <Link
+          href="/contact"
+          className="inline-block px-8 py-3 bg-white text-[#165dfc] font-semibold rounded-2xl shadow-md hover:bg-gray-100 transition-all duration-300 ease-in-out"
+        >
+          Get in Touch
+        </Link>
+      </div>
 
       {/* Modal */}
       <ProjectDetailModal

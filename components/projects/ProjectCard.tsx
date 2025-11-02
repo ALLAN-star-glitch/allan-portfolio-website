@@ -93,7 +93,20 @@ export default function ProjectCard({ project, onView }: ProjectCardProps) {
         {onView && (
           <button
             onClick={() => onView(project)}
-            className="mt-6 w-full px-4 py-2 bg-[#165dfc] text-white text-sm font-medium rounded-md cursor-pointer hover:bg-blue-600 transition"
+             className="
+          w-full sm:w-auto
+          flex items-center justify-center
+          px-8 py-3
+          mt-3
+          bg-linear-to-r from-blue-600 to-cyan-500
+          text-white font-semibold text-lg
+          rounded-xl
+          shadow-lg hover:shadow-2xl
+          transition-all duration-300
+          focus:outline-none focus:ring-4 focus:ring-blue-300/40
+          cursor-pointer
+        "
+    
           >
             View Project
           </button>

@@ -77,7 +77,7 @@ export default function FeaturedProjectsSection() {
               >
                 <ProjectCard
                   project={project}
-                  onView={(p) => setSelectedProject(p)} // ✅ Opens modal
+                  onView={(p) => setSelectedProject(p)} //  Opens modal
                 />
               </ZoomInWhenVisible>
             ))}

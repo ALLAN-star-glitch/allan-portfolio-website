@@ -1,10 +1,11 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import FadeInWhenVisible from "../animations/FadeInWhenVisible";
 import SlideInWhenVisible from "../animations/SlideInWhenVisible";
 import ZoomInWhenVisible from "../animations/ZoomInWhenVisible";
+import PrimaryButton from "../common/PrimaryButton";
+import SecondaryButton from "../common/SecondaryButton";
 
 export default function HeroSection() {
   return (
@@ -36,17 +37,8 @@ export default function HeroSection() {
             {/* Buttons */}
             <FadeInWhenVisible delay={0.3}>
               <div className="flex flex-wrap justify-center lg:justify-start gap-4">
-                <Link href="/projects">
-                  <button className="px-6 py-3 bg-[#2979FF] text-white rounded-xl font-medium shadow-lg hover:shadow-xl transition-all hover:-translate-y-1">
-                    View My Work
-                  </button>
-                </Link>
-
-                <a href="mailto:allan@domain.com" rel="noopener noreferrer">
-                  <button className="px-6 py-3 bg-white text-gray-800 rounded-xl font-medium shadow-md hover:shadow-lg border border-gray-200 transition-all hover:-translate-y-1">
-                    Let’s Collaborate
-                  </button>
-                </a>
+                <PrimaryButton label="View My Work" href="/projects" />
+                <SecondaryButton label="Let's collaborate" href="/contact" />
               </div>
             </FadeInWhenVisible>
 
