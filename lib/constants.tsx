@@ -11,8 +11,7 @@ import {
   FaPenNib,
   FaUser,
   FaAward,
-  FaBriefcase,
-  FaCloudDownloadAlt, // ✅ added for Digital Resources
+  FaBriefcase
 } from "react-icons/fa";
 
 export const navLinks = [
@@ -22,7 +21,6 @@ export const navLinks = [
   { name: "Skills", href: "/skills", icon: <FaTools size={18} /> },
   { name: "Services", href: "/services", icon: <FaBriefcase size={18} /> },
   { name: "Blog", href: "/blog", icon: <FaPenNib size={18} /> },
-  { name: "Resources", href: "/resources", icon: <FaCloudDownloadAlt size={18} /> }, // ✅ new menu item
   { name: "Achievements", href: "/achievements", icon: <FaAward size={18} /> },
   { name: "Contact", href: "/contact", icon: <FaEnvelope size={18} /> },
 ];
