@@ -21,3 +21,29 @@ export type Project = {
     };
   };
 };
+
+
+
+export type HeroSectionType = {
+  id: number;
+  title: string;
+  specialties: string[];
+  mobile_image?: {
+    url: string;
+    formats?: {
+      thumbnail?: { url: string };
+      small?: { url: string };
+      medium?: { url: string };
+      large?: { url: string };
+    };
+  };
+  desktop_image?: {
+    url: string;
+    formats?: {
+      thumbnail?: { url: string };
+      small?: { url: string };
+      medium?: { url: string };
+      large?: { url: string };
+    };
+  };
+};

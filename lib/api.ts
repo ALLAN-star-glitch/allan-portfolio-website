@@ -1,3 +1,4 @@
+import { HeroSectionType } from "./types";
 
 /**
  * Generic fetch helper for Strapi REST API
@@ -35,4 +36,13 @@ export async function getProjects(page: number = 1, pageSize: number = 6) {
     `projects?pagination[page]=${page}&pagination[pageSize]=${pageSize}&populate=*`
   );
   return data; // Strapi returns { data, meta }
+}
+
+
+/**
+ * Fetch Hero Section content
+ */
+export async function getHeroSection(): Promise<HeroSectionType | null> {
+  const data = await fetchFromStrapi("hero-section?populate=*");
+  return data?.data || null;
 }
