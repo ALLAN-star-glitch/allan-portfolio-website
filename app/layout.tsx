@@ -42,31 +42,28 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white text-gray-800`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#0B1120] text-white overflow-x-hidden`}
       >
-        {/* ✅ Sidebar handles both mobile and desktop */}
         <Sidebar />
 
-        {/* ✅ Main container */}
-        <div className="flex flex-col md:flex-row min-h-screen w-full">
-          {/* Desktop Sidebar Spacer (only visible on large screens) */}
+        <div className="flex flex-col md:flex-row min-h-screen w-full overflow-x-hidden">
+          {/* Desktop Sidebar Spacer */}
           <div className="hidden lg:block w-72 shrink-0" />
 
-          {/* ✅ Main Content — flush & responsive */}
           <main
             className="
               flex-1 
               w-full 
               min-h-screen 
               overflow-y-auto 
-              bg-white
+              overflow-x-hidden
+              bg-[#0B1120]
               transition-all 
               duration-300 
               ease-in-out
-              pt-5
-              lg:pt-0
+              scroll-smooth
             "
           >
             {children}
@@ -74,7 +71,7 @@ export default function RootLayout({
           </main>
         </div>
 
-        {/*  Google Analytics */}
+        {/* Google Analytics */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-JLGC0GH6Y8"
           strategy="afterInteractive"

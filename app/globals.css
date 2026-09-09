@@ -1,22 +1,42 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Tech Theme Colors */
+  --background: #0B1120;
+  --foreground: #F8FAFC;
+  
+  /* Primary Colors */
+  --primary-blue: #2563EB;
+  --primary-cyan: #06B6D4;
+  --primary-purple: #7C3AED;
+  
+  /* Secondary Colors */
+  --secondary-slate: #1E293B;
+  --secondary-gray: #94A3B8;
+  --secondary-light: #38BDF8;
+  
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, #2563EB, #7C3AED);
+  --gradient-hero: linear-gradient(135deg, #0B1120, #1A2332, #0B1120);
+  --gradient-card: linear-gradient(135deg, #1E293B, #0F172A);
+  --gradient-button: linear-gradient(135deg, #2563EB, #7C3AED);
+  
+  /* Fonts */
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-primary-blue: var(--primary-blue);
+  --color-primary-cyan: var(--primary-cyan);
+  --color-primary-purple: var(--primary-purple);
+  --color-secondary-slate: var(--secondary-slate);
+  --color-secondary-gray: var(--secondary-gray);
+  --color-secondary-light: var(--secondary-light);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
 }
 
 body {
@@ -24,3 +44,207 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* ===== ANIMATIONS ===== */
+
+/* Slow spin for decorative rings */
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin-slow-reverse {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 20s linear infinite;
+}
+
+.animate-spin-slow-reverse {
+  animation: spin-slow-reverse 25s linear infinite;
+}
+
+/* Pulsing ring effect for hero image */
+@keyframes pulse-ring {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.08);
+    opacity: 0.2;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+}
+
+.animate-pulse-ring {
+  animation: pulse-ring 3s ease-in-out infinite;
+}
+
+/* Floating animation for badges */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Glow pulse for tech elements */
+@keyframes glow-pulse {
+  0% {
+    box-shadow: 0 0 20px -10px rgba(37, 99, 235, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px -5px rgba(37, 99, 235, 0.6);
+  }
+  100% {
+    box-shadow: 0 0 20px -10px rgba(37, 99, 235, 0.3);
+  }
+}
+
+.animate-glow-pulse {
+  animation: glow-pulse 3s ease-in-out infinite;
+}
+
+/* Shimmer effect for cards */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-shimmer {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.05) 50%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+/* ===== SCROLLBAR STYLING (Tech Theme) ===== */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, var(--primary-blue), var(--primary-purple));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, var(--primary-cyan), var(--primary-blue));
+}
+
+/* ===== SELECTION COLOR ===== */
+::selection {
+  background: var(--primary-blue);
+  color: white;
+}
+
+/* ===== UTILITY CLASSES ===== */
+
+/* Glass morphism for tech theme */
+.glass-tech {
+  background: rgba(30, 41, 59, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-tech-light {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Tech gradient text */
+.text-gradient-primary {
+  background: linear-gradient(135deg, #06B6D4, #2563EB, #7C3AED);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-blue {
+  background: linear-gradient(135deg, #06B6D4, #2563EB);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-purple {
+  background: linear-gradient(135deg, #7C3AED, #EC4899);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Tech glow effects */
+.glow-blue {
+  box-shadow: 0 0 40px -10px rgba(37, 99, 235, 0.3);
+}
+
+.glow-purple {
+  box-shadow: 0 0 40px -10px rgba(124, 58, 237, 0.3);
+}
+
+.glow-cyan {
+  box-shadow: 0 0 40px -10px rgba(6, 182, 212, 0.3);
+}
+
+/* Tech grid pattern */
+.bg-tech-grid {
+  background-image: 
+    linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 4rem 4rem;
+}
+
+/* Tech dots pattern */
+.bg-tech-dots {
+  background-image: radial-gradient(rgba(255,255,255,0.05) 1px, transparent 1px);
+  background-size: 2rem 2rem;
+}
+
+/* ===== RESPONSIVE ADJUSTMENTS ===== */
+@media (max-width: 768px) {
+  .glass-tech {
+    background: rgba(30, 41, 59, 0.8);
+  }
+}
+
+

@@ -22,16 +22,16 @@ export default function SecondaryButton({ href, label }: ButtonProps) {
           py-2.5 sm:py-3 md:py-3.5
           text-sm sm:text-base md:text-lg
           font-semibold
-          text-gray-700
-          bg-white/70 backdrop-blur-md
-          border border-gray-300/70 
+          text-gray-300
+          bg-white/5 backdrop-blur-sm
+          border border-white/10
           rounded-xl
-          hover:text-blue-600 
-          hover:border-blue-400
-          hover:bg-blue-50/60
-          hover:shadow-md hover:shadow-blue-100/40
+          hover:text-cyan-400
+          hover:border-cyan-500/50
+          hover:bg-white/10
+          hover:shadow-lg hover:shadow-cyan-500/5
           transition-all duration-300 ease-out
-          focus:outline-none focus:ring-4 focus:ring-blue-200/40
+          focus:outline-none focus:ring-4 focus:ring-cyan-500/20
           cursor-pointer
           select-none
         "

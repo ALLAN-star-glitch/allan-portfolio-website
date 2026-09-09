@@ -8,7 +8,7 @@ export default function HomePage() {
   return (
     <div className="w-full">
       <HeroSection />
-      <main className="space-y-20 mt-12">
+      <main className="w-full">
         <AboutSection />
         <FeaturedProjectsSection />
         <CallToAction />

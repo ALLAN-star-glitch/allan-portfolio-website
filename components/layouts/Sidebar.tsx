@@ -13,31 +13,30 @@ export default function Sidebar() {
   return (
     <>
       {/* ===== Desktop Sidebar ===== */}
-      <aside className="hidden lg:flex fixed left-0 top-0 h-screen w-72 bg-linear-to-b from-white to-blue-50 border-r border-gray-200 flex-col justify-between shadow-md z-40 overflow-y-auto scrollbar-thin scrollbar-thumb-blue-200 scrollbar-track-transparent">
-
+      <aside className="hidden lg:flex fixed left-0 top-0 h-screen w-72 bg-[#0F172A] border-r border-white/5 flex-col justify-between shadow-xl z-40 overflow-y-auto overflow-x-hidden scrollbar-thin scrollbar-thumb-cyan-500/30 scrollbar-track-transparent">
         {/* Top Section */}
         <div>
           {/* Profile Section */}
           <div className="flex flex-col items-center mt-12 px-6 text-center">
-            <div className="relative w-28 h-28 rounded-full overflow-hidden border-4 border-blue-100 shadow-lg hover:shadow-xl transition-all duration-300">
+            <div className="relative w-28 h-28 rounded-full overflow-hidden border-2 border-cyan-500/30 shadow-lg shadow-cyan-500/10 hover:shadow-cyan-500/20 transition-all duration-300">
               <Image
                 src="/allanprofile.jpg"
                 alt="Allan Mathenge"
                 width={120}
                 height={120}
-                className="object-cover"
+                className="object-cover rounded-full"
                 priority
               />
             </div>
 
-            <h1 className="mt-5 text-xl font-bold text-gray-900 tracking-tight">
+            <h1 className="mt-5 text-xl font-bold text-white tracking-tight">
               Allan Mathenge
             </h1>
-            <p className="text-sm text-gray-500 font-medium">
-              Software Engineer & Designer
+            <p className="text-sm text-gray-400 font-medium">
+              Software Engineer &amp; QA
             </p>
 
-            <div className="w-12 h-0.5 bg-blue-200 mt-4 rounded-full" />
+            <div className="w-12 h-0.5 bg-gradient-to-r from-cyan-500 to-purple-500 mt-4 rounded-full" />
 
             {/* Social Links */}
             <div className="flex justify-center space-x-4 mt-5">
@@ -47,7 +46,7 @@ export default function Sidebar() {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-600 hover:text-blue-600 transition-colors duration-300"
+                  className="text-gray-500 hover:text-cyan-400 transition-colors duration-300"
                 >
                   {social.icon}
                 </Link>
@@ -56,7 +55,7 @@ export default function Sidebar() {
           </div>
 
           {/* Navigation Links */}
-          <nav className="flex flex-col mt-8 space-y-0.5 px-5">
+          <nav className="flex flex-col mt-8 space-y-0.5 px-4">
             {navLinks.map((link) => (
               <SidebarItem
                 key={link.name}
@@ -69,55 +68,55 @@ export default function Sidebar() {
         </div>
 
         {/* Contact Info */}
-        <div className="px-6 mb-6 space-y-2 text-sm text-gray-600">
-          <div className="flex items-center gap-2">
-            <Phone className="w-4 h-4 text-blue-500" />
+        <div className="px-6 mb-6 space-y-2 text-sm text-gray-400">
+          <div className="flex items-center gap-2 hover:text-cyan-400 transition-colors">
+            <Phone className="w-4 h-4 text-cyan-400" />
             <span>+254 740 955111</span>
           </div>
-          <div className="flex items-center gap-2">
-            <Mail className="w-4 h-4 text-blue-500" />
-            <span>allanmathenge67@gmail.com</span>
+          <div className="flex items-center gap-2 hover:text-cyan-400 transition-colors">
+            <Mail className="w-4 h-4 text-cyan-400" />
+            <span className="truncate">allanmathenge67@gmail.com</span>
           </div>
-          <div className="flex items-center gap-2">
-            <MapPin className="w-4 h-4 text-blue-500" />
+          <div className="flex items-center gap-2 hover:text-cyan-400 transition-colors">
+            <MapPin className="w-4 h-4 text-cyan-400" />
             <span>Nairobi, Kenya</span>
           </div>
 
           {/* Footer */}
-          <div className="flex items-center justify-center gap-2 text-xs text-gray-500 mt-5 border-t border-gray-200 pt-4">
-            <span className="font-semibold text-gray-700">
+          <div className="flex items-center justify-center gap-2 text-xs text-gray-500 mt-5 border-t border-white/5 pt-4">
+            <span className="font-semibold text-gray-400">
               © {new Date().getFullYear()}
             </span>
-            <span className="text-gray-400 tracking-wide">Allan Mathenge</span>
+            <span className="text-gray-500 tracking-wide">Allan Mathenge</span>
           </div>
         </div>
       </aside>
 
       {/* ===== Mobile & Medium Navbar ===== */}
-      <header className="lg:hidden fixed top-0 left-0 w-full bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-sm z-50 flex items-center justify-between px-5 py-3">
+      <header className="lg:hidden fixed top-0 left-0 w-full bg-[#0F172A]/95 backdrop-blur-md border-b border-white/5 shadow-lg z-50 flex items-center justify-between px-5 py-3">
         {/* Left: Logo */}
         <Link href="/">
-          <div className="relative w-10 h-10">
+          <div className="relative w-10 h-10 rounded-full overflow-hidden border border-cyan-500/30">
             <Image
-              src="/logo.png"
+              src="/allanprofile.jpg"
               alt="Logo"
               width={40}
               height={40}
-              className="object-contain"
+              className="object-cover rounded-full"
               priority
             />
           </div>
         </Link>
 
         {/* Center: Full Name */}
-        <div className="absolute left-1/2 transform -translate-x-1/2 text-gray-900 font-semibold text-lg tracking-tight">
+        <div className="absolute left-1/2 transform -translate-x-1/2 text-white font-semibold text-lg tracking-tight">
           Allan Mathenge
         </div>
 
         {/* Right: Toggle Button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="text-gray-700 hover:text-blue-600 transition-colors duration-200 focus:outline-none"
+          className="text-gray-400 hover:text-cyan-400 transition-colors duration-200 focus:outline-none"
           aria-label="Toggle Sidebar"
         >
           <svg
@@ -148,35 +147,35 @@ export default function Sidebar() {
       {/* ===== Mobile Overlay ===== */}
       {isOpen && (
         <div
-          className="fixed inset-0 bg-black/40 backdrop-blur-sm z-40 transition-opacity duration-300"
+          className="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 transition-opacity duration-300"
           onClick={() => setIsOpen(false)}
         />
       )}
 
       {/* ===== Mobile Drawer ===== */}
       <aside
-        className={`fixed top-0 left-0 h-full w-72 bg-linear-to-b from-white to-blue-50 border-r border-gray-200 shadow-2xl z-50 transform transition-transform duration-300 ease-in-out overflow-y-auto scrollbar-thin scrollbar-thumb-blue-200 scrollbar-track-transparent ${
+        className={`fixed top-0 left-0 h-full w-72 bg-[#0F172A] border-r border-white/5 shadow-2xl z-50 transform transition-transform duration-300 ease-in-out overflow-y-auto overflow-x-hidden scrollbar-thin scrollbar-thumb-cyan-500/30 scrollbar-track-transparent ${
           isOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
         <div className="flex flex-col justify-between h-full py-10 px-6">
           {/* Profile */}
           <div className="flex flex-col items-center text-center">
-            <div className="relative w-24 h-24 rounded-full overflow-hidden border-4 border-blue-100 shadow-md hover:shadow-lg transition-all duration-300">
+            <div className="relative w-24 h-24 rounded-full overflow-hidden border-2 border-cyan-500/30 shadow-lg shadow-cyan-500/10">
               <Image
                 src="/allanprofile.jpg"
                 alt="Allan Mathenge"
                 width={100}
                 height={100}
-                className="object-cover"
+                className="object-cover rounded-full"
                 priority
               />
             </div>
-            <h1 className="mt-4 text-lg font-bold text-gray-900">
+            <h1 className="mt-4 text-lg font-bold text-white">
               Allan Mathenge
             </h1>
-            <p className="text-sm text-gray-500 font-medium">
-              Software Engineer & Designer
+            <p className="text-sm text-gray-400 font-medium">
+              Software Engineer &amp; QA
             </p>
 
             <div className="flex justify-center space-x-4 mt-4">
@@ -186,7 +185,7 @@ export default function Sidebar() {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-600 hover:text-blue-600 transition-colors duration-300"
+                  className="text-gray-500 hover:text-cyan-400 transition-colors duration-300"
                 >
                   {social.icon}
                 </Link>
@@ -208,25 +207,25 @@ export default function Sidebar() {
           </nav>
 
           {/* Contact Info + Footer */}
-          <div className="mt-10 text-sm text-gray-600 space-y-2">
-            <div className="flex items-center gap-2">
-              <Phone className="w-4 h-4 text-blue-500" />
+          <div className="mt-10 text-sm text-gray-400 space-y-2">
+            <div className="flex items-center gap-2 hover:text-cyan-400 transition-colors">
+              <Phone className="w-4 h-4 text-cyan-400" />
               <span>+254 740 955111</span>
             </div>
-            <div className="flex items-center gap-2">
-              <Mail className="w-4 h-4 text-blue-500" />
-              <span>allanmathenge67@gmail.com</span>
+            <div className="flex items-center gap-2 hover:text-cyan-400 transition-colors">
+              <Mail className="w-4 h-4 text-cyan-400" />
+              <span className="truncate">allanmathenge67@gmail.com</span>
             </div>
-            <div className="flex items-center gap-2">
-              <MapPin className="w-4 h-4 text-blue-500" />
+            <div className="flex items-center gap-2 hover:text-cyan-400 transition-colors">
+              <MapPin className="w-4 h-4 text-cyan-400" />
               <span>Nairobi, Kenya</span>
             </div>
 
-            <div className="flex items-center justify-center gap-2 text-xs text-gray-500 mt-5 border-t border-gray-200 pt-4">
-              <span className="font-semibold text-gray-700">
+            <div className="flex items-center justify-center gap-2 text-xs text-gray-500 mt-5 border-t border-white/5 pt-4">
+              <span className="font-semibold text-gray-400">
                 © {new Date().getFullYear()}
               </span>
-              <span className="text-gray-400 tracking-wide">Allan Mathenge</span>
+              <span className="text-gray-500 tracking-wide">Allan Mathenge</span>
             </div>
           </div>
         </div>

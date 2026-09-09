@@ -19,8 +19,7 @@ export const navLinks = [
   { name: "About", href: "/about", icon: <FaUser size={18} /> },
   { name: "Projects", href: "/projects", icon: <FaProjectDiagram size={18} /> },
   { name: "Skills", href: "/skills", icon: <FaTools size={18} /> },
-  { name: "Services", href: "/services", icon: <FaBriefcase size={18} /> },
-  { name: "Blog", href: "/blog", icon: <FaPenNib size={18} /> },
+  //{ name: "Blog", href: "/blog", icon: <FaPenNib size={18} /> },
   { name: "Achievements", href: "/achievements", icon: <FaAward size={18} /> },
   { name: "Contact", href: "/contact", icon: <FaEnvelope size={18} /> },
 ];
