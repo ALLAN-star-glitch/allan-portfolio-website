@@ -42,28 +42,32 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className="h-full">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#0B1120] text-white overflow-x-hidden`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#0B1120] text-white h-full overflow-hidden`}
       >
-        <Sidebar />
+        <div className="flex flex-col md:flex-row h-screen w-full overflow-hidden">
+          {/* Sidebar (fixed on desktop, hidden on mobile) */}
+          <Sidebar />
 
-        <div className="flex flex-col md:flex-row min-h-screen w-full overflow-x-hidden">
           {/* Desktop Sidebar Spacer */}
           <div className="hidden lg:block w-72 shrink-0" />
 
+          {/* Main scroll container */}
           <main
+            id="main-scroll"
             className="
-              flex-1 
-              w-full 
-              min-h-screen 
-              overflow-y-auto 
+              flex-1
+              h-screen
+              w-full
+              overflow-y-auto
               overflow-x-hidden
+              overscroll-contain
               bg-[#0B1120]
-              transition-all 
-              duration-300 
-              ease-in-out
               scroll-smooth
+              transition-all
+              duration-300
+              ease-in-out
             "
           >
             {children}

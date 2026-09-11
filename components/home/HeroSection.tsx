@@ -13,11 +13,22 @@ export default function HeroSection() {
 
   // Hardcoded data
   const heroData = {
-    title: "Full Stack Developer & Test Automation Engineer crafting seamless digital experiences with modern web technologies.",
-    specialties: ["Full Stack", "Mobile", "Backend", "Automation Testing", "Python", "Golang", "Next.js", "Kotlin"],
+    title:
+      "Full Stack Developer & Test Automation Engineer crafting seamless digital experiences with modern web technologies.",
+    specialties: [
+      "Full Stack",
+      "Mobile",
+      "Backend",
+      "Automation Testing",
+      "Python",
+      "Golang",
+      "Next.js",
+      "Kotlin",
+    ],
     name: "Allan,",
     image: "/images/hero/hero-image.jpeg",
-    aiNote: "I also build AI-powered applications, integrating machine learning into practical, user-friendly solutions.",
+    aiNote:
+      "I also build AI-powered applications, integrating machine learning into practical, user-friendly solutions.",
   };
 
   // Animation variants
@@ -74,14 +85,9 @@ export default function HeroSection() {
             onError={() => setVideoError(true)}
           >
             <source
-              src="/videos/coding-workspace.mp4"
-              type="video/mp4"
-            />
-            <source
               src="https://www.pexels.com/download/video/34268782/"
               type="video/mp4"
             />
-            Your browser does not support the video tag.
           </video>
         </div>
       )}
@@ -157,9 +163,7 @@ export default function HeroSection() {
               className="inline-flex items-center gap-2 px-4 py-2 bg-blue-500/10 backdrop-blur-sm rounded-full border border-blue-500/20"
             >
               <AiOutlineRobot className="w-4 h-4 text-cyan-400" />
-              <span className="text-sm text-gray-300">
-                {heroData.aiNote}
-              </span>
+              <span className="text-sm text-gray-300">{heroData.aiNote}</span>
             </motion.div>
 
             {/* CTA Buttons */}
@@ -239,10 +243,10 @@ export default function HeroSection() {
                 <div className="absolute -inset-4 rounded-full border border-cyan-500/20 animate-spin-slow" />
                 <div className="absolute -inset-8 rounded-full border border-purple-500/20 animate-spin-slow-reverse" />
                 <div className="absolute -inset-12 rounded-full border border-blue-500/10" />
-                
+
                 {/* Pulsing ring */}
                 <div className="absolute -inset-6 rounded-full border-2 border-cyan-500/30 animate-pulse-ring" />
-                
+
                 {/* Image */}
                 <div className="relative w-full h-full rounded-3xl overflow-hidden shadow-2xl shadow-blue-500/20 group-hover:shadow-blue-500/30 transition-shadow duration-500">
                   <Image
